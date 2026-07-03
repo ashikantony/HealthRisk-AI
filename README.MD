@@ -90,6 +90,5 @@ or
 
 streamlit run simulation/game_engine.py
 
----## License
 
 MIT License
