@@ -90,14 +90,6 @@ or
 
 streamlit run simulation/game_engine.py
 
----
-
-## Authors
-
-HealthRisk AI Development Team
-
----
-
-## License
+---## License
 
 MIT License
