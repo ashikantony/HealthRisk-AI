@@ -1,0 +1,41 @@
+simulation:
+
+  initial_capital:
+    total: 500000000
+
+  allocations:
+    insurance: 150000000
+    hospital_bonds: 150000000
+    pharma_equities: 100000000
+    credit_facilities: 100000000
+
+modes:
+
+  actuarial:
+    duration_years: 10
+    decisions: 40
+
+  hospital_credit:
+    duration_years: 10
+    decisions: 40
+
+  pharma:
+    duration_years: 5
+    decisions: 20
+
+  integrated:
+    duration_years: 10
+    decisions: 40
+
+scoring:
+
+  insurance_management: 250
+  hospital_credit_analysis: 250
+  pharmaceutical_alpha: 200
+  credit_facility_management: 150
+  cross_asset_management: 100
+  decision_quality: 50
+
+leaderboard:
+  enabled: true
+  top_players: 20

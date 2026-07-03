@@ -1,0 +1,17 @@
+insurance:
+
+  premium_model:
+    target_loss_ratio: 0.82
+    administrative_cost_ratio: 0.12
+    profit_margin: 0.06
+
+  reserves:
+    reserve_buffer: 0.20
+    ibnr_multiplier: 1.15
+
+  claims:
+    high_risk_threshold: 0.75
+    catastrophic_threshold: 0.90
+
+  member_retention:
+    target_retention_rate: 0.90

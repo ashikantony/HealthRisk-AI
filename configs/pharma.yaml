@@ -1,0 +1,19 @@
+pharma:
+
+  portfolio:
+    maximum_positions: 20
+    maximum_single_position_weight: 0.10
+    rebalance_frequency: quarterly
+
+  clinical_trials:
+    phase1_success_probability: 0.63
+    phase2_success_probability: 0.31
+    phase3_success_probability: 0.58
+
+  valuation:
+    discount_rate: 0.12
+    terminal_growth_rate: 0.03
+
+  risk_management:
+    stop_loss: 0.15
+    maximum_drawdown: 0.30

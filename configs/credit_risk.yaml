@@ -1,0 +1,28 @@
+credit_risk:
+
+  ratings:
+    investment_grade:
+      - AAA
+      - AA
+      - A
+      - BBB
+
+    speculative_grade:
+      - BB
+      - B
+      - CCC
+      - CC
+      - C
+      - D
+
+  probability_of_default:
+    warning_threshold: 0.20
+    distress_threshold: 0.40
+
+  recovery_rate:
+    default: 0.45
+
+  bond_spread:
+    low_risk: 0.01
+    medium_risk: 0.03
+    high_risk: 0.08

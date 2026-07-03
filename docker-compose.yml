@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+
+  healthrisk-app:
+    build: .
+    container_name: healthrisk-ai
+
+    ports:
+      - "8501:8501"
+      - "8000:8000"
+
+    volumes:
+      - .:/app
+
+    environment:
+      - PYTHONUNBUFFERED=1
+      - APP_ENV=development
+
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16
+
+    container_name: healthrisk-db
+
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_USER: healthrisk
+      POSTGRES_PASSWORD: healthrisk123
+      POSTGRES_DB: healthrisk_db
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

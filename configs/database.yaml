@@ -1,0 +1,21 @@
+database:
+
+  postgres:
+    host: localhost
+    port: 5432
+    database: healthrisk_db
+    username: healthrisk
+    password: healthrisk123
+
+  sqlite:
+    database_file: healthrisk.db
+
+connection_pool:
+  pool_size: 20
+  max_overflow: 30
+  timeout: 30
+  recycle_seconds: 3600
+
+warehouse:
+  enabled: true
+  schema: analytics

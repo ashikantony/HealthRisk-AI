@@ -1,0 +1,41 @@
+[build-system]
+requires = [
+    "setuptools>=68",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthrisk-ai"
+version = "1.0.0"
+description = "AI platform for healthcare intelligence and financial risk analytics"
+readme = "README.md"
+requires-python = ">=3.11"
+
+authors = [
+    {name = "HealthRisk AI Team"}
+]
+
+license = {text = "MIT"}
+
+keywords = [
+    "healthcare",
+    "finance",
+    "machine-learning",
+    "insurance",
+    "credit-risk",
+    "pharmaceuticals",
+    "simulation"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+dependencies = []
+
+[tool.setuptools]
+include-package-data = true

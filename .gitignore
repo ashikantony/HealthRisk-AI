@@ -1,0 +1,57 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Environment Files
+.env
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Python Cache
+.pytest_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+
+# Model Files
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+
+# Data
+data/raw/
+data/intermediate/
+
+# Reports
+reports/generated/
+
+# Docker
+*.tar

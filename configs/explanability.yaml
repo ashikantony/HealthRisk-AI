@@ -1,0 +1,23 @@
+explainability:
+
+  shap:
+    enabled: true
+    sample_size: 1000
+
+  lime:
+    enabled: true
+    sample_size: 5000
+
+  counterfactual:
+    enabled: true
+    max_examples: 10
+
+  feature_importance:
+    top_features: 20
+
+  fairness:
+    enabled: true
+    protected_attributes:
+      - age
+      - gender
+      - ethnicity

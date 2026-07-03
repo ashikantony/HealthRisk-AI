@@ -1,0 +1,109 @@
+import torch
+import torch.nn as nn
+from torch.utils.data import (
+    DataLoader,
+    TensorDataset
+)
+
+
+class SurvivalTrainer:
+
+    def __init__(
+        self,
+        model,
+        learning_rate=0.001,
+        epochs=100,
+        batch_size=32
+    ):
+        self.model = model
+        self.epochs = epochs
+        self.batch_size = batch_size
+
+        self.optimizer = (
+            torch.optim.Adam(
+                model.parameters(),
+                lr=learning_rate
+            )
+        )
+
+        self.criterion = (
+            nn.MSELoss()
+        )
+
+    def train(
+        self,
+        features,
+        targets
+    ):
+
+        dataset = TensorDataset(
+            features,
+            targets
+        )
+
+        dataloader = DataLoader(
+            dataset,
+            batch_size=self.batch_size,
+            shuffle=True
+        )
+
+        self.model.train()
+
+        for epoch in range(
+            self.epochs
+        ):
+
+            total_loss = 0
+
+            for batch_x, batch_y in dataloader:
+
+                self.optimizer.zero_grad()
+
+                predictions = self.model(
+                    batch_x
+                )
+
+                loss = self.criterion(
+                    predictions.squeeze(),
+                    batch_y.float()
+                )
+
+                loss.backward()
+
+                self.optimizer.step()
+
+                total_loss += (
+                    loss.item()
+                )
+
+            average_loss = (
+                total_loss /
+                len(dataloader)
+            )
+
+            if (
+                epoch + 1
+            ) % 10 == 0:
+
+                print(
+                    f"Epoch "
+                    f"{epoch + 1}/"
+                    f"{self.epochs}"
+                    f" | Loss: "
+                    f"{average_loss:.4f}"
+                )
+
+    def predict(
+        self,
+        features
+    ):
+
+        self.model.eval()
+
+        with torch.no_grad():
+
+            predictions = self.model(
+                features
+            )
+
+        return predictions

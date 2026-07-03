@@ -1,0 +1,48 @@
+name: Docker Build Verification
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+
+  docker:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Container
+        run: |
+          docker build -t healthrisk-ai .
+
+      - name: Validate Docker Image
+        run: |
+          docker images
+
+      - name: Start Container
+        run: |
+          docker run -d \
+          --name healthrisk-container \
+          -p 8501:8501 \
+          healthrisk-ai
+
+      - name: List Running Containers
+        run: |
+          docker ps
+
+      - name: Stop Container
+        run: |
+          docker stop healthrisk-container
+
+      - name: Remove Container
+        run: |
+          docker rm healthrisk-container

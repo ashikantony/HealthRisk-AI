@@ -1,0 +1,27 @@
+deployment:
+
+  environment: development
+
+  api:
+    workers: 4
+    timeout: 120
+
+  dashboard:
+    host: 0.0.0.0
+    port: 8501
+
+  database:
+    connection_retries: 5
+
+  monitoring:
+    enabled: true
+    metrics_endpoint: /metrics
+
+  docker:
+    image_name: healthrisk-ai
+    image_tag: latest
+
+  autoscaling:
+    enabled: false
+    min_instances: 1
+    max_instances: 5

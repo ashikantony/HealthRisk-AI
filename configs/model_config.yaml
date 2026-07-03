@@ -1,0 +1,49 @@
+training:
+  random_seed: 42
+  test_size: 0.20
+  validation_size: 0.10
+  cv_folds: 5
+
+xgboost:
+  n_estimators: 500
+  max_depth: 8
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+
+lightgbm:
+  n_estimators: 500
+  learning_rate: 0.05
+  max_depth: 10
+  num_leaves: 64
+
+random_forest:
+  n_estimators: 300
+  max_depth: 15
+
+clinical_bert:
+  model_name: emilyalsentzer/Bio_ClinicalBERT
+  max_length: 512
+  batch_size: 8
+  epochs: 5
+
+lstm:
+  hidden_size: 128
+  layers: 2
+  dropout: 0.30
+  epochs: 100
+  batch_size: 32
+
+evaluation:
+  classification_metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+
+  regression_metrics:
+    - mae
+    - mse
+    - rmse
+    - r2
